@@ -10,5 +10,5 @@ clean:
 	rm test
 test:
 	g++ main.cpp matrix.cpp matrix.h -o test
-	./test < test.txt
+	./test < input.txt
 	rm test
