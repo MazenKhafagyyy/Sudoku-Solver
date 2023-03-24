@@ -1,25 +1,25 @@
 #include "matrix.h"
 
 /*
-Description: Constructs the matrix using a singular float value.
+Description: Constructs the matrix using a singular int value.
 
 Arguments:
     row_size (size_t): Rows of the matrix.
     columns_size (size_t): Columns of the matrix.
-    init (float): The value to be added to all rows and columns of the matrix.
+    init (int): The value to be added to all rows and columns of the matrix.
 */
 
-Matrix::Matrix(size_t rows_size, size_t columns_size, float init) 
+Matrix::Matrix(size_t rows_size, size_t columns_size, int init) 
 {
     rows = rows_size;
     columns = columns_size;
 
     // Allocates memory for the bigger array.
-    values = new float*[rows];
+    values = new int*[rows];
     for (int i = 0; i < rows; i++)
     {
         // Allocates memomry for each one of the smaller array.
-        values[i] = new float[columns];
+        values[i] = new int[columns];
     }
 
     // Nested for loop to assign values to matrix (2-Dimensional array).
@@ -33,23 +33,23 @@ Matrix::Matrix(size_t rows_size, size_t columns_size, float init)
 }
 
 /*
-Description: Constructs the matrix using a float array.
+Description: Constructs the matrix using a int array.
 
 Arguments:
     row_size (size_t): Rows of the matrix.
     columns_size (size_t): Columns of the matrix.
-    arr_ptr (float*): A pointer that points to the first element in the array.
+    arr_ptr (int*): A pointer that points to the first element in the array.
 */
-Matrix::Matrix(size_t rows_size, size_t columns_size, float * arr_ptr)
+Matrix::Matrix(size_t rows_size, size_t columns_size, int * arr_ptr)
 {
     rows = rows_size;
     columns = columns_size;
 
-    values = new float*[rows];
+    values = new int*[rows];
     size_t index = 0;
     for (size_t i = 0; i < rows; i++)
     {
-        values[i] = new float[columns];
+        values[i] = new int[columns];
     }
 
     for (size_t i = 0; i < rows; i++)
@@ -73,10 +73,10 @@ Matrix::Matrix(const Matrix& rhs)
     rows = rhs.rows;
     columns = rhs.columns;
 
-    values = new float*[rows];
+    values = new int*[rows];
     for (int i = 0; i < rows; i++)
     {
-        values[i] = new float[columns];
+        values[i] = new int[columns];
     }
 
     for (int i = 0; i < rows; i++)
@@ -233,16 +233,16 @@ Arguments:
     index (size_t): Index of the smaller array.
 
 Returns:
-    values[index] (float*): Returns a pointer to the smaller array.
+    values[index] (int*): Returns a pointer to the smaller array.
 */
 //SETTER
-float* Matrix::operator[] (size_t index)
+int* Matrix::operator[] (size_t index)
 {
     return values[index];
 }
 
 //GETTER
-float* Matrix::operator[] (size_t index) const 
+int* Matrix::operator[] (size_t index) const 
 {
     return values[index];
 }

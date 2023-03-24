@@ -3,22 +3,46 @@
 
 using namespace std;
 
+bool in_column(int col, int num)
+{
+
+    return 
+}
+
+bool in_row()
+{
+
+}
+
+bool in_box()
+{
+
+}
+
 Matrix solver(Matrix sudoku)
 {
-    Matrix solution;
+    Matrix solution = sudoku;
+
+    for (int row = 0; row < 9; row++)
+    {
+        for (int col = 0; col < 9; col++)
+        {
+            
+        }
+    }
 
     return solution;
 }
 
-int main() {
+int main(){
 
-    Matrix A(9,9,0.0);
-    bool run = true;
+    Matrix A(9,9,0);
 
-    while (run)
-    {
-        cin>>A;
-    }
+    cin>>A;
+
+    // Output result
+    Matrix B = solver(A);
+    cout<<B;
 
     return 0;
 }

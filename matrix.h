@@ -19,10 +19,10 @@ public:
     // Constructors.
 
     // Constructor using a float value to fill entire matrix.
-    Matrix(size_t num_rows, size_t num_columns, float init);
+    Matrix(size_t num_rows, size_t num_columns, int init);
 
     // Constructor using a float array to fill matrix.
-    Matrix(size_t num_rows, size_t num_columns, float * arr_ptr);
+    Matrix(size_t num_rows, size_t num_columns, int * arr_ptr);
 
     // Deepcopy constructor.
     Matrix(const Matrix& rhs);
@@ -45,8 +45,8 @@ public:
     Matrix operator- ();
 
     // Matrix Value Setting and Getting.
-    float* operator[] (size_t index);           //Setter
-    float* operator[] (size_t index) const;     //Getter
+    int* operator[] (size_t index);           //Setter
+    int* operator[] (size_t index) const;     //Getter
 
     // Insertion and Extraction Overloading.
     // Used friend keyword to use private and protected members.       
@@ -62,6 +62,6 @@ private:
     size_t rows, columns;
 
     // Two-dimensional array to store values of matrix.
-    float ** values;
+    int ** values;
 
 };

@@ -7,7 +7,8 @@ project:
 clean:
 	rm -f *.o
 	rm -f program
+	rm test
 test:
 	g++ main.cpp matrix.cpp matrix.h -o test
-	./test
+	./test < test.txt
 	rm test
