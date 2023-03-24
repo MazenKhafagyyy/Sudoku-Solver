@@ -253,7 +253,7 @@ Description: Overloads the ">>" operator to extract values into matrix from
 
 Arguments:
     in (istream&): Object from istream class with values from stream.
-    matrix_in (Matrix&): Matrix where values wil be added to.
+    matrix_in (Matrix&): Matrix where values will be added to.
 
 Returns:
     in (istream&): Object from class istream class.
