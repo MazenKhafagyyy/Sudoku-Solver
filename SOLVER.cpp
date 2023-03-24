@@ -60,23 +60,33 @@ bool solveSudoku(Matrix &sudoku){
 
 int main(){
 
-    Matrix sudoku(9,9,0);
-    cin>>sudoku;
+    bool run = true;
+    string prompt;
+    
+    cout<<"--SUDOKU SOLVER--"<<endl<<endl;
+    cout<<"Enter a prompt: "<<endl;
+    cout<<"(x to exit, s to enter sudoku board)"<<endl;
 
-    if (solveSudoku(sudoku) == true)
-        for (int row = 0; row < N; row++){
-            for (int col = 0; col < N; col++){
-                if(col == 3 || col == 6)
-                    cout << " | ";
-                cout << sudoku[row][col] <<" ";
+    while (run)
+    {
+        Matrix sudoku(9,9,0);
+        cin>>sudoku;
+
+        if (solveSudoku(sudoku) == true)
+            for (int row = 0; row < N; row++){
+                for (int col = 0; col < N; col++){
+                    if(col == 3 || col == 6)
+                        cout << " | ";
+                    cout << sudoku[row][col] <<" ";
+                }
+            if(row == 2 || row == 5){
+                cout << endl;
+                for(int i = 0; i<N; i++)
+                    cout << "---";
             }
-        if(row == 2 || row == 5){
             cout << endl;
-            for(int i = 0; i<N; i++)
-                cout << "---";
-      }
-      cout << endl;
-   }
-    else
-       cout << "No solution exists";
+        }
+        else
+        cout << "No solution exists";
+    }
 }
