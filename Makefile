@@ -2,11 +2,12 @@ push:
 	git add --all
 	git commit -am "MK"
 	git push
-we5_solution:
-	g++ matrix.cpp we5_test.cpp matrix.h -o we5_solution
+project:
+	g++ main.cpp matrix.cpp matrix.h -o program
 clean:
-	rm we5_solution
+	rm -f *.o
+	rm -f program
 test:
-	g++ matrix.cpp matrix.h test.cpp -o test
+	g++ main.cpp matrix.cpp matrix.h -o test
 	./test
 	rm test

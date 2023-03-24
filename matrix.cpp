@@ -1,15 +1,3 @@
-/* 
----------------------------------------------------
-Name : Mazen Khafagy
-SID: 1709867
-CCID : mkhafagy
-AnonID : 1000318443
-CMPUT 275 , Winter 2023
-
-Assessment: Weekly Exercice #5 (Matrix Class)
----------------------------------------------------
-*/
-
 #include "matrix.h"
 
 /*
