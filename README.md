@@ -1,3 +1,3 @@
-# Sudoku-Solver
+# Sudoku Solver
 
 Sudoku Solver program in C++ 
