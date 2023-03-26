@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "matrix.h"
 
 #define N 9
@@ -61,22 +62,28 @@ bool solveSudoku(Matrix &sudoku){
 int main(){
 
     Matrix sudoku(9,9,0);
-    cin>>sudoku;
+    ifstream fin("input.txt", ios::in);
+    ofstream fout("solution.txt", ios::out);
+    
+    for (int i = 0; i < 81; i++)
+    {
+        fin>>sudoku;
+    }
 
     if (solveSudoku(sudoku) == true)
         for (int row = 0; row < N; row++){
             for (int col = 0; col < N; col++){
                 if(col == 3 || col == 6)
-                    cout << " | ";
-                cout << sudoku[row][col] <<" ";
+                    fout << " | ";
+                fout << sudoku[row][col] <<" ";
             }
         if(row == 2 || row == 5){
-            cout << endl;
+            fout << endl;
             for(int i = 0; i<N; i++)
-                cout << "---";
+                fout << "---";
       }
-      cout << endl;
+      fout << endl;
    }
     else
-       cout << "No solution exists";
+       fout << "No solution exists";
 }
